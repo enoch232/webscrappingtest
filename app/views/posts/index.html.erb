@@ -1,4 +1,4 @@
-<% @titles.each do |title| %>
-	<%= title %>
+<% @titles.each_index do |i| %>
+	<%= @titles[i] %>---<span style = "color:green"><%= @prices[i] %></span>
 	<br>
 <% end %>

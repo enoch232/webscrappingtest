@@ -11,9 +11,12 @@ class PostsController < ApplicationController
 
 	doc.css('.li').each do |content|
 		@titles ||= ""
-		@titles = @titles +"\n"+ content.at_css('.vip, strong').text
-
+		@prices ||= ""
+		@titles = @titles +".."+ content.at_css('.vip, strong').text
+		@prices = @prices +".."+ content.at_css('.prc .bold').text
 	end
-	@titles = @titles.split("\n")
+	@titles = @titles.split("..")
+	@prices = @prices.split("..")
   end
+
 end
